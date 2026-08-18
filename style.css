@@ -1,0 +1,268 @@
+/* =========================
+   BASE GERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef1f4;
+    color: #1a1a1a;
+    line-height: 1.7;
+}
+
+/* =========================
+   FORMATO A4 (VISUAL REALISTA)
+========================= */
+
+header, section {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 25px auto;
+    padding: 25mm;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border-radius: 6px;
+    position: relative;
+}
+
+/* =========================
+   IDENTIDADE FUTURAMA
+========================= */
+
+header::before {
+    content: "FUTURAMA • FIRST LEGO LEAGUE PROJECT";
+    position: absolute;
+    top: 10mm;
+    left: 25mm;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+/* =========================
+   CAPA
+========================= */
+
+.capa {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.capa h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.capa h2 {
+    font-size: 16px;
+    color: #444;
+    margin-top: 8px;
+}
+
+.titulo-principal {
+    font-size: 46px;
+    margin: 25px 0;
+    color: #0f172a;
+    letter-spacing: 2px;
+}
+
+.subtitulo {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.info-capa p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.destinatarios ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.destinatarios li {
+    font-size: 14px;
+}
+
+/* =========================
+   FRASE DE IMPACTO
+========================= */
+
+.frase {
+    margin-top: 35px;
+    font-style: italic;
+    font-size: 14px;
+    border-left: 5px solid #f4c430;
+    padding-left: 12px;
+    color: #444;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================
+   SUMÁRIO (ESTILO DOCUMENTO)
+========================= */
+
+.sumario h2 {
+    font-size: 24px;
+    border-left: 6px solid #f4c430;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+.sumario ol {
+    margin-left: 20px;
+}
+
+.sumario li {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #ccc;
+    padding: 6px 0;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-left: 6px solid #0f172a;
+    padding-left: 12px;
+}
+
+section h3 {
+    font-size: 18px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+section p, section li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   LISTAS
+========================= */
+
+ul, ol {
+    margin-left: 25px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* =========================
+   CAIXAS (RISCOS / CRONOGRAMA)
+========================= */
+
+.img-placeholder,
+.placeholder-box {
+    background: #f8fafc;
+    border-left: 5px solid #f4c430;
+    padding: 16px;
+    margin: 18px 0;
+    font-size: 14px;
+    border-radius: 6px;
+    color: #333;
+}
+
+/* =========================
+   CORE VALUES (CARDS)
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #0f172a;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background: #111c36;
+}
+
+/* =========================
+   DETALHE VISUAL DAS SEÇÕES
+========================= */
+
+section {
+    border-top: 4px solid #f4c430;
+}
+
+/* =========================
+   IMPRESSÃO (PDF PERFEITO)
+========================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    header, section {
+        box-shadow: none;
+        margin: 0;
+        border-radius: 0;
+        page-break-after: always;
+    }
+
+    header::before {
+        position: fixed;
+    }
+
+.img-fll {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.img-fll img {
+    width: 280px;   
+    max-width: 40%;     
+    height: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+}
